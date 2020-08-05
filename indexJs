@@ -1,0 +1,39 @@
+// <⚠️ DONT DELETE THIS ⚠️>
+import "./styles.css";
+const colors = ["#1abc9c", "#3498db", "#9b59b6", "#f39c12", "#e74c3c"];
+// <⚠️ /DONT DELETE THIS ⚠️>
+
+const title = document.getElementsByTagName("h2")[0];
+
+const superEventHandler = {
+  mouseOver: function() {
+    title.innerHTML = "The mouse is here!";
+    title.style.color = colors[0];
+  },
+
+  mouseLeave: function() {
+    title.innerHTML = "The mouse leave.";
+    title.style.color = colors[1];
+  },
+
+  click: function() {
+    title.innerHTML = "The title is clicked.";
+    title.style.color = colors[2];
+  },
+
+  resize: function() {
+    title.innerHTML = "The window is resized.";
+    title.style.color = colors[3];
+  },
+
+  contextMenu: function() {
+    title.innerHTML = "Right Click.";
+    title.style.color = colors[4];
+  }
+};
+
+title.addEventListener("mouseover", superEventHandler.mouseOver);
+title.addEventListener("mouseleave", superEventHandler.mouseLeave);
+title.addEventListener("click", superEventHandler.click);
+title.addEventListener("contextmenu", superEventHandler.contextMenu);
+window.addEventListener("resize", superEventHandler.resize);
